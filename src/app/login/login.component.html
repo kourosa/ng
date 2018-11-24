@@ -1,0 +1,28 @@
+
+  <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>Login Form</mat-card-title>   
+        </mat-card-header>
+        
+    <mat-card-content>
+      <form [formGroup]="LoginForm">
+            
+        <mat-form-field >
+            <input matInput placeholder="User Name :" formControlName="user">
+            <mat-error > Your User should be an email</mat-error>
+        </mat-form-field>
+        <mat-form-field >
+                <input matInput placeholder="Password :" formControlName="pass">
+             <!--  <mat-error > Password is at least 6 letters</mat-error> -->
+        </mat-form-field>
+       
+        <button mat-flat-button [disabled]="LoginForm.invalid" color="primary" >Login</button>
+        <button mat-flat-button color="primary" (click)="resetform()" >Reset</button>
+    
+      </form>
+     
+    </mat-card-content>
+   
+  </mat-card>
+  Value: {{ LoginForm.value | json }}
+  
